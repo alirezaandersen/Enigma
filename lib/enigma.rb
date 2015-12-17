@@ -9,10 +9,6 @@ class Enigma
 
     attr_reader :date_key, :key
 
-    def initialize
-      # @date_key = Time.now
-      # @key = key_gen
-    end
 
     def encrypt(message, key =nil, date = nil)
       encryptor = Encryptor.new(message,key,date)

@@ -55,4 +55,13 @@ class EnigmaTest < Minitest::Test
     assert 6, date.length
   end
 
+  def test_does_the_crack_work_with_dot_end
+    my_message = " Your my Favorite Instructor!"
+    enc = Encryptor.new(my_message, "12345")
+    crack = Crack.new(enc.encrypt)
+    assert_raises ArgumentError do crack.crackle
+    end
+  end
+
+
 end
