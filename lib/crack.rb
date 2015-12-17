@@ -15,10 +15,9 @@ end
   end
 
 def cracked_file(file_name, data, date)
-  file = File.open(file_name, "w")
   puts "inside cracked_file: data = #{data}"
   crackle = Crack.new(data, date)
-  plaintext = crack.crackle
+  plaintext = crackle.crackle
   File.write(file_name, plaintext)
   puts "Created #{file_name} with the key #{crackle.crack_key} with the date #{crackle.date}"
 end
