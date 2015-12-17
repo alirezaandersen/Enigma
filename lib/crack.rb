@@ -1,8 +1,8 @@
 require_relative 'cracked'
 
-unless ARGV.length == 6
+unless ARGV.length == 3
   puts "Not the right number of arguments."
-	puts "Usage: ruby #{__FILE__} encrypted.txt decrypted.txt <key> <ddmmyy>\n"
+	puts "Usage: ruby #{__FILE__} encrypted.txt crack.txt <ddmmyy>\n"
 	exit
 end
 
@@ -17,10 +17,10 @@ end
 def cracked_file(file_name, data, date)
   file = File.open(file_name, "r")
   puts "inside cracked_file: data = #{data}"
-  crackle = Crack.new(data)
-  plaintext = crack.crack
+  crackle = Crack.new(data, date)
+  plaintext = crack.crackle
   File.write(file_name, plaintext)
-  puts "Created #{file_name} with the date #{cracked.date}"
+  puts "Created #{file_name} with the key #{crackle.crack_key} with the date #{crackle.date}"
 end
 
 __FILE__
@@ -30,4 +30,6 @@ data = read_file(encrypted_file)
 
 cracked_file = ARGV[1]
 date = ARGV[2]
+puts "date = #{date}"
+date ||= Time.now
 crack_file(cracked_file, data, date)
