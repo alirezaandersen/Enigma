@@ -6,7 +6,7 @@ require 'pry'
 
 class Crack
 
-  attr_accessor :crack_key
+  attr_accessor :crack_key, :date
 
   def initialize(message, date = nil)
     if message.nil?
@@ -135,7 +135,7 @@ class Crack
         end
       end
     end
-    =begin
+=begin
     # puts a_rot.inspect
     # puts b_rot.inspect
     # puts c_rot.inspect
@@ -144,7 +144,7 @@ class Crack
     # puts "b_rot_val.inspect = " + b_rot_val.inspect
     # puts "c_rot_val.inspect = " + c_rot_val.inspect
     # puts "d_rot_val.inspect = " + d_rot_val.inspect
-    =end
+=end
 
     if a_rot_val[0].nil? || a_rot_val[1].nil? || b_rot_val[1].nil? || c_rot_val[1].nil? || d_rot_val[1].nil?
       raise ArgumentError, "encrypted message: '#{@message}' seems to be missing ..end.."
@@ -155,7 +155,5 @@ class Crack
     #   puts key
     decryptor = Decryptor.new(@message,@crack_key,@date)
     decryptor.decrypt
-
-
-  end
+ end
 end

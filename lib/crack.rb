@@ -15,7 +15,7 @@ end
   end
 
 def cracked_file(file_name, data, date)
-  file = File.open(file_name, "r")
+  file = File.open(file_name, "w")
   puts "inside cracked_file: data = #{data}"
   crackle = Crack.new(data, date)
   plaintext = crack.crackle
@@ -32,4 +32,4 @@ cracked_file = ARGV[1]
 date = ARGV[2]
 puts "date = #{date}"
 date ||= Time.now
-crack_file(cracked_file, data, date)
+cracked_file(cracked_file, data, date)
