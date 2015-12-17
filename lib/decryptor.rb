@@ -5,7 +5,7 @@ require 'pry'
 
 class Decryptor
 
-  attr_reader :key, :date=nil
+  attr_reader :key, :date
 
   def initialize(message, key, date)
     if message.nil?

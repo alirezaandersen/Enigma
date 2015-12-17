@@ -6,16 +6,16 @@ require 'pry'
 
 unless ARGV.length == 2
 	puts "Not the right number of arguments."
-  puts "Usage: ruby #{__FILE__} message.txt encrypted.txt\n"
-  exit
+	puts "Usage: ruby #{__FILE__} message.txt encrypted.txt\n"
+	exit
 end
 
 def read_file(file_name)
-  file = File.open(file_name, "r")
-  data = file.read.strip	#strip to remove EOF character
-  puts "inside read_file: data = #{data}"
-  file.close
-  return data
+	file = File.open(file_name, "r")
+	data = file.read.strip	#strip to remove EOF character
+	puts "inside read_file: data = #{data}"
+	file.close
+	return data
 end
 
 def encrypt_file(file_name,data)
