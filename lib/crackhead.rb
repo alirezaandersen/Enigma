@@ -32,7 +32,7 @@ class Crack
   #   end #puts "n_rotation_index = " + n_rotation_index.to_s
 
    def method_2 #date offset values using indicies above
-   last_dot_offset = @offset_array(@message.length-1) %4 #[last_dot_rotation_index]
+   last_dot_offset = @offset_array[(@message.length-1) %4] #[last_dot_rotation_index]
    second_to_last_dot_offset = @offset_array(@message.length-2) %4 #[second_to_last_dot_rotation_index]
    d_rotation_offset = @offset_array(@message.length-3) %4 #[d_rotation_index]
    n_rotation_offset = @offset_array(@message.length-4) %4 #[n_rotation_index]

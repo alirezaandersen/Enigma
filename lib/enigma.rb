@@ -22,22 +22,7 @@ class Enigma
 
     def crack(encrypted_message, date = nil)
       crackle = Crack.new(encrypted_message,date)
-
       crackle.crackle
     end
 
 end
-
-
-#
-
-=begin
-puts "-" * 10
-puts "Calling encrypt (no key)"
-encrypted_message = e.encrypt(my_message)
-puts "encrypted_message = " + encrypted_message.to_s
-puts "-" * 10
-puts "Calling crack"
-crack_plaintext = e.crack(encrypted_message)
-#puts "crack_plaintext = " + crack_plaintext.to_s
-=end
